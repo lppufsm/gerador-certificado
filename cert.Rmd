@@ -1,0 +1,57 @@
+---
+title: ""
+author: ""
+output:
+  xaringan::moon_reader:
+    seal: false
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+layout: true
+
+background-image: url(imagens/marcadagua.png)
+background-size: cover
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+```{css echo=FALSE}
+.hide-count .remark-slide-number {
+  display: none;
+}
+
+.small {
+  font-size: 60%;}
+}
+```
+
+---
+class: center, middle, hide-count
+
+```{r, echo=FALSE}
+knitr::include_graphics("imagens/header.png")
+```
+
+
+# Certificado
+
+Certificamos que **NOME** compareceu ao evento "**Workshop de R**" apresentado pela Liga de Políticas Públicas da Universidade Federal de Santa Maria no dia xx de junho de 2021, totalizando uma carga horária de 3 horas.
+<br />
+<br />
+
+```{r, echo=FALSE, fig.align='center', out.width='25%'}
+knitr::include_graphics("imagens/assinatura.png")
+```
+Mateus<br />.small[Cargo]
+
+<br />
+<br />
+<br />
+<br />
+--
+
