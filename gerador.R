@@ -1,48 +1,47 @@
 ####################################################
-# automatically create customized certificates
+# gerador de certificados
 #####################################################
 
-# load needed packages
 library(readr)
 library(dplyr)
 library(stringr)
 
-# load data, read everything in as a string/character
+# ler a planilha com os nomes dos participantes. A coluna com os nomes tem nome "participante"
 df <- read.csv("nomes.csv", sep = ";")
 
-# load either pdf or word certificate template
+# ler o template do certificado
 template <- readr::read_file("cert.Rmd")
 
-#run through all students, generate personalized certificate for each
+# rodar para os participantes, gerando um certificado para cada
 for (i in 1:nrow(df)){
   
-  #replace the placeholder words in the template with the student information
-  current_cert <- template %>%
+  # substituir o "NOME" no template pelo nome do participante
+  cert_i <- template %>%
     str_replace("NOME", df[i,'participante'])
   
-  #generate an output file name based on student name
-  out_filename = paste(df[i,'participante'],'Certificado',sep="_")
-  out_filename = paste0(out_filename, '.Rmd')
+  # gerar nome do cerificado para cada participante
+  nome_cert = paste(df[i,'participante'],'Certificado',sep="_")
+  nome_cert = paste0(nome_cert, '.Rmd')
   
-  #save customized Rmd to a temporary file
-  write_file(current_cert, out_filename) }
+  # salvar um .Rmd personalizado para cada participante
+  write_file(cert_i, nome_cert) }
 
-#listando os certificados em rmd
+# listando os certificados em .Rmd
 certificados<-list.files(pattern = "_Certificado.Rmd", full.names = T)
 
-#convertendo para html
+# convertendo para .html
 purrr::map(certificados, rmarkdown::render)
 
-#apagando arquivos rmd
+# apagando arquivos .Rmd
 file.remove(certificados)
   
-#selecionando os arquivos html
+# selecionando os arquivos .html
 certificadosht<-list.files(pattern = "_Certificado.html", full.names = T)
 
-#convertendo em pdf
+# convertendo para pdf
 certificadosht %>% purrr::map(xaringanBuilder::build_pdf)
 
-#apagando
+# apagando os arquivos .html
 file.remove(certificadosht)
 
   
