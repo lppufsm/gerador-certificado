@@ -40,14 +40,21 @@ knitr::include_graphics("imagens/header.png")
 
 # Certificado
 
-Certificamos que **NOME** compareceu ao evento "**Workshop de R**" apresentado pela Liga de Políticas Públicas da Universidade Federal de Santa Maria no dia xx de junho de 2021, totalizando uma carga horária de 3 horas.
+Certificamos que **NOME** compareceu ao evento "**Workshop: Análise de Dados Brasileiros com R**", apresentado pela Liga de Políticas Públicas da Universidade Federal de Santa Maria no dia 08 de junho de 2021, totalizando uma carga horária de 5 horas.
 <br />
 <br />
 
-```{r, echo=FALSE, fig.align='center', out.width='25%'}
-knitr::include_graphics("imagens/assinatura.png")
+.pull-left[
+```{r, echo=FALSE, fig.align='center', out.width='59%'}
+knitr::include_graphics("imagens/assinatura1.png")
 ```
-Mateus<br />.small[Cargo]
+Gabriela Terra<br />.small[Organizadora]]
+
+.pull-right[
+```{r, echo=FALSE, fig.align='center', out.width='65%'}
+knitr::include_graphics("imagens/assinatura2.png")
+```
+<br />Mateus Cardoso<br />.small[Organizador]]
 
 <br />
 <br />
